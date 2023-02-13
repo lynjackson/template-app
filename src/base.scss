@@ -1,0 +1,83 @@
+@media screen and (width: '') {
+    // Don’t create specific designs for specific screen sizes. Instead, create entirely flexible designs from the outset and insert breakpoints only where the content breaks the layout — hence breakpoint.
+    // Padding, margin and widths should almost always be relative units (%)
+}
+
+html { 
+    font-size: 1em;
+    // Set all other fonts in document to rem so all fonts adjust to user's custom setting
+    font-display: swap;
+    // makes it so system font renders if custom font hasn't downloaded. Then switches them when it does.
+    font-size: calc(1em + .1vw);
+    // Fluid type (NL) - This makes it so that when the page grows, the font size increases ever so slightly. For more growth, increase the vw amount.
+}
+
+p {
+    max-width: 60rem;
+    // Since 1rem in a typeface corresponds to the width of the typeface’s lowercase m, a paragraph 60rem wide has a measure of 60. That's b/t the optimal of 45 and 75 characters. 
+    line-height: 150%;
+    // 1.5x the font-size. Beware static line-heights.
+    color: #222;
+    // Aim for 14:1 ratio for paragraph text'
+}
+
+a{
+    text-decoration: underline;
+    // Underline links. It's a convention and makes links easily identifiable. Using color alone harms the colorblind.
+}
+
+p a:focus {
+	outline: none;
+	background-color: #cef;
+	text-shadow: 0.05em 0 0 #cef, -0.05em 0 0 #cef;
+}
+// If links are not styled so their focus state is indicated, it’s impossible for the user to see when it's focused.
+
+
+h1 {}
+    // <h1> is the top heading of the document. It's the label for the <body>, so never more than one/page.
+h2 {}
+    // 	<h2> creates a subsection. That's two levels deep.
+h3 {}
+h4 {}
+h5 {}
+h6 {}
+
+// Heading elements derive much of their meaning from their relationships with one another. Think of headings as a system, and not individual elements. 
+// The ultimate purpose of HTML is to form structure through differentiation and <h1> to <h6> are the only elements in HTML5 currently able to describe depth in an inclusive fashion.
+// When deciding what <h> element to use, use the one that's proper in relation to the structure of the document. Don't skip levels. 
+// If you think the <h3> style would look better at a particular place that's only two levels deep, use an <h2> and custom style it as an <h3>.
+
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip: rect(1px, 1px, 1px, 1px);
+	white-space: nowrap;
+}
+// This set of properties will hide elements visually without them becoming silenced in screen reader software.
+
+
+
+// Flow System - Your flow system manages the relations between flow elements which appear one after another in a single column by default in HTML. 
+// Instead of setting custom margins for each element becomes confusing and can cause problems when there's also padding. Instead, your flow system should handle top margins with a few high level CSS selectors.
+
+main * + * {
+	margin-top: 1.5rem;
+}
+    // This 'owl selector' says: any element that has a preceding direct sibling element… 
+    //This ensures every flow element is separated by the same 1.5rem margin, with a few exceptions. 
+
+* + h3 {
+	margin-top: 1.5rem;
+}
+    // all h3s that follow another element
+
+main * + *:not(p) {
+	margin: 3rem 0;
+}
+    // all non p elements that follow another element
+
+
+

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!-- must include this for page to function correctly -->
+<html lang="en">
+<!-- always declare the main language of the page -->
+<!-- 
+	• Makes page more indexable by search engines
+	• Makes page work with Google Translate
+	• Changes dictionaries on page so that users get correct one
+	• Triggers the correct voice on screen readers 
+	• You can also use the :lang CSS pseudo class to target text in diff languages.
+-->
+
+<head>
+    <meta charset="utf-8">
+    
+    <meta name="viewport" content="width=device-width, initialscale= 1.0">
+    <!-- a viewport declaration which allows for users to pinch to zoom -->
+    
+    <link rel="stylesheet" href="fonts.css" media="none" onload="if(media!='all')media='all'">
+    <noscript>
+        <link rel="stylesheet" href="fonts.css">
+    </noscript>
+    <!-- a non-blocking base64-encoded font resource -->
+
+    <link rel="stylesheet" href="main.css" media="none" onload="if(media!='all')media='all'">
+    <noscript>
+        <link rel="stylesheet" href="main.css">
+    </noscript>
+    <!-- a non-blocking stylesheet -->
+    
+    <title>Inclusive Design Template | Heydon's Site</title>
+    <!-- a descriptive label for the page -->
+
+</head>
+
+Everything below this line should go in the JSX ------------------------------------------------
+
+<body>    
+    
+    <a href="#main">skip to main content</a>
+    <!-- a handy skip link enabling keyboard users to shortcut straight to the <main> -->
+    
+    <!-- logo / page navigation etc. goes here -->
+    
+    
+    <main id="main">
+        <!-- unique content of page goes here -->
+    </main>
+    
+    <script src="scripts.js"></script>
+    <!-- a non-blocking javascript resource. Scripts should always be inserted at the end of the document, just before the closing </body> tag-->
+
+</body>
+</html>
